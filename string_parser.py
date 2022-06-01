@@ -1,10 +1,9 @@
-# Description: 
+# Description: String parsing of HTML with regex.
 # Author: Haley Hunter-Zinck
 # Date: 2022-06-01
 # tutorial: https://realpython.com/python-web-scraping-practical-introduction/
 
 from urllib.request import urlopen
-
 import re
 
 # paramters
@@ -103,3 +102,26 @@ pattern = "<title.*?>.*?</title.*?>"
 title_plus = re.search(pattern, html, re.IGNORECASE).group()
 title = re.sub("<.*?>", "", title_plus, re.IGNORECASE)
 print(title)
+
+#################
+#   exercise 1  #
+#################
+
+# description use .find() to display the text following “Name:” and “Favorite Color:” 
+# (not including any leading spaces or trailing HTML tags that might appear on the 
+# same line).
+
+# read html
+page = urlopen(url_dionysus)
+html_bytes = page.read()
+html = html_bytes.decode("utf-8")
+print(html)
+
+# get name text
+for search_str in ["Name: ", "Favorite Color: "]:
+    name_index = html.find(search_str)
+    start_index = name_index + len(search_str)
+    end_index = start_index + html[start_index:].find("<")
+    str_raw = html[start_index:end_index]
+    str_clean = re.sub("[ \n\t\r*]", "", str_raw)
+    print(f"{search_str}'{str_clean}'")
