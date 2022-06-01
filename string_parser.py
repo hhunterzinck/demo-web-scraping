@@ -10,6 +10,7 @@ import re
 # paramters
 url_aphrodite = "http://olympus.realpython.org/profiles/aphrodite"
 url_poseidon = "http://olympus.realpython.org/profiles/poseidon"
+url_dionysus = "http://olympus.realpython.org/profiles/dionysus"
 
 #########################
 #       aphrodite       #
@@ -89,3 +90,16 @@ print(f"greedy sub: {greedy}")
 minsub = re.sub("<.*?>", "ELEPHANTS", string)
 print(f"greedy sub: {minsub}")
 
+#################
+#   dionysus    #
+#################
+
+page = urlopen(url_dionysus)
+html_bytes = page.read()
+html = html_bytes.decode("utf-8")
+# <TITLE >Profile: Dionysus</title  / >
+
+pattern = "<title.*?>.*?</title.*?>"
+title_plus = re.search(pattern, html, re.IGNORECASE).group()
+title = re.sub("<.*?>", "", title_plus, re.IGNORECASE)
+print(title)
