@@ -57,26 +57,35 @@ print(f"title take 2: '{title}'")
 ######################
 
 # asterisk (*) behavior: zero or more of previous character
-re.findall("ab*c", "ac")
-re.findall("ab*c", "abcd")
-re.findall("ab*c", "acc")
-re.findall("ab*c", "abcac")
-re.findall("ab*c", "abdc")
-re.findall("ab*c", "ABC")
-re.findall("ab*c", "ABC", re.IGNORECASE)
+print(f"regex 01: {re.findall('ab*c', 'ac')}")
+print(f'regex 01: {re.findall("ab*c", "abcd")}')
+print(re.findall("ab*c", "acc"))
+print(re.findall("ab*c", "abcac"))
+print(re.findall("ab*c", "abdc"))
+print(re.findall("ab*c", "ABC"))
+print(re.findall("ab*c", "ABC", re.IGNORECASE))
 
 # period (.) behavior: any single character
-re.findall("a.c", "abc")
-re.findall("a.c", "abbc")
-re.findall("a.c", "ac")
-re.findall("a.c", "acc")
+print(re.findall("a.c", "abc"))
+print(re.findall("a.c", "abbc"))
+print(re.findall("a.c", "ac"))
+print(re.findall("a.c", "acc"))
 
 # combos of period and asterisk
-re.findall("a.*c", "abc")
-re.findall("a.*c", "abbc")
-re.findall("a.*c", "ac")
-re.findall("a.*c", "acc")
+print(re.findall("a.*c", "abc"))
+print(re.findall("a.*c", "abbc"))
+print(re.findall("a.*c", "ac"))
+print(re.findall("a.*c", "acc"))
 
 # search function
 match_results = re.search("ab*c", "ABC", re.IGNORECASE)
-match_results.group()
+print(f"'ab*c' in 'ABC' ignoring case: '{match_results.group()}'")
+
+# sub function and question mark (?)
+string = "Everything is <replaced> if it's in <tags>."
+print(f"original string: {string}")
+greedy = re.sub("<.*>", "ELEPHANTS", string)
+print(f"greedy sub: {greedy}")
+minsub = re.sub("<.*?>", "ELEPHANTS", string)
+print(f"greedy sub: {minsub}")
+
