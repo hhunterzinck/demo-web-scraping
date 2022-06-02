@@ -1,7 +1,7 @@
 # Description: String parsing of HTML with regex.
 # Author: Haley Hunter-Zinck
 # Date: 2022-06-01
-# tutorial: https://realpython.com/python-web-scraping-practical-introduction/
+# Tutorial: https://realpython.com/python-web-scraping-practical-introduction/
 
 from urllib.request import urlopen
 import re

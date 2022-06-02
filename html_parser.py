@@ -1,6 +1,7 @@
 # Description: HTML parser tool 
 # Author: Haley Hunter-Zinck
 # Date: 2022-06-01
+# Tutorial: https://realpython.com/python-web-scraping-practical-introduction/
 # install: python3 -m pip install beautifulsoup4
 # show install details: python3 -m pip show beautifulsoup4
 
