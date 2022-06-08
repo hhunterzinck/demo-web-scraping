@@ -1,4 +1,4 @@
-# Description: Interact with HTML forms via MechanicalSoup
+# Description: Handle interactive HTML sites with MechanicalSoup
 # Author: Haley Hunter-Zinck
 # Date: 2022-06-01
 # Tutorial: https://realpython.com/python-web-scraping-practical-introduction/
