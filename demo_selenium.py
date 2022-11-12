@@ -1,5 +1,4 @@
 # Description: Demo of web scraping with Selenium.
-# Author: Haley Hunter-Zinck
 # Date: 2022-06-08
 # URL: https://towardsdatascience.com/how-to-use-selenium-to-web-scrape-with-example-80f9b23a843a
 # note: will need to download chrome driver from https://chromedriver.chromium.org/downloads
