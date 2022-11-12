@@ -1,5 +1,4 @@
 # Description: String parsing of HTML with regex.
-# Author: Haley Hunter-Zinck
 # Date: 2022-06-01
 # Tutorial: https://realpython.com/python-web-scraping-practical-introduction/
 
